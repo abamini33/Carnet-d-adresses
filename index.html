@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le carnet d'adresses</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.14/dist/vue.js"></script>
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+</head>
+
+<body>
+    <div id="app">
+        <!-- appel des composants -->
+        <!-- v-bind:contacts="contacts" sert à transmettre la propriété contacts aux enfants -->
+        <!-- v-on:save="save" créé un event qui s'appelle 'save' , le parent sera à l'écoute de cet event provenant de l'enfant. Si l'enfant émet cet event alors le parent lancera la méthode save -->
+       <show-contacts v-bind:contacts="contacts" v-on:save="saveInLocalStorage"></show-contacts>
+       <add-contact v-bind:contacts="contacts" v-on:save="saveInLocalStorage"></add-contact>
+    </div>
+
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>
